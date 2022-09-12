@@ -7,11 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 import sd_back.demo.domain.Member;
 import sd_back.demo.service.MemberService;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Slf4j
@@ -27,7 +24,7 @@ public class JoinController {
     }
 
     @PostMapping("/join")
-    public String join(@Valid @ModelAttribute joinForm form, BindingResult bindingResult, HttpServletRequest request) {
+    public String join(@Valid @ModelAttribute joinForm form, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "join/joinForm";
@@ -37,7 +34,7 @@ public class JoinController {
 
         memberService.join(joinMember.getStudentId(), joinMember.getName(), joinMember.getPassword());
 
-        return "join/joinSuccess";
+        return "join/joinSuccessForm";
 
     }
 }
