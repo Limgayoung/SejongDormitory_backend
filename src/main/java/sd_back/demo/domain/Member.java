@@ -1,10 +1,12 @@
 package sd_back.demo.domain;
 
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
+@Builder
 public class Member {
     private Long id;
     private Long studentId;
@@ -16,4 +18,5 @@ public class Member {
         this.name = name;
         this.password = password;
     }
+
 }
