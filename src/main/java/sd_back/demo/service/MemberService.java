@@ -26,11 +26,8 @@ public class MemberService {
             return null;
         }
     }
-
     public void join(Long studentId, String name, String password){ //회원가입
         Member member = new Member(studentId,name,password);
         memberRepository.save(member);
     }
-
-
 }
