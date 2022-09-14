@@ -1,15 +1,17 @@
 package sd_back.demo.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import sd_back.demo.domain.Member;
 
 import java.util.List;
 import java.util.Optional;
 
 //mysql Repository
-public class mysqlMemberRepository implements MemberRepository{
+public abstract class mysqlMemberRepository implements MemberRepository{
     @Override
-    public Member save(Member memeber) {
-        return null;
+    public Member save(Member member) {
+
+        return member;
     }
 
     @Override
